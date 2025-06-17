@@ -1,0 +1,428 @@
+/* --- CONFIGURACIÓN GLOBAL Y TIPOGRAFÍA --- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Lato', system-ui, sans-serif;
+  background-color: #121212;
+  color: #eee;
+  line-height: 1.6;
+}
+
+.main-content {
+  max-width: 900px;
+  margin: 0 auto;
+  /* El padding superior se elimina porque el contenido ya está debajo del header */
+  padding: 0 2rem 2rem 2rem;
+}
+
+section {
+  margin-bottom: 5rem;
+  /* Añadimos padding-top para que el anclaje no quede oculto por la barra pegajosa */
+  padding-top: 80px;
+  margin-top: -80px;
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2.5rem;
+  border-bottom: 3px solid #3874a1; 
+  padding-bottom: 0.75rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+/* --- BARRA DE NAVEGACIÓN PEGADIZA (STICKY) --- */
+.sticky-nav {
+  /* Se posiciona de forma pegajosa en la parte superior */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  
+  /* Estilos de la barra */
+  background-color: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #333;
+  padding: 0.75rem 0;
+
+  /* Centra los enlaces */
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+
+  /* Inicialmente está oculta y fuera de la pantalla */
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none; /* No se puede interactuar con ella si no es visible */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.sticky-nav.visible {
+  /* La clase 'visible' (añadida por JS) la hace aparecer */
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Estilos de los enlaces de la barra pegajosa (compartidos con la del header) */
+.sticky-nav a,
+.header-nav a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.sticky-nav a::after,
+.header-nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #3874a1;
+  transition: all 0.3s ease-in-out;
+}
+
+.sticky-nav a:hover,
+.header-nav a:hover {
+  color: #fff;
+}
+
+.sticky-nav a:hover::after,
+.header-nav a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+
+/* --- ENCABEZADO Y NAVEGACIÓN INTEGRADA --- */
+header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  background-image: linear-gradient(to top, rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.4)), url("./images/wallpaper.png");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+header h1 {
+  font-size: clamp(3rem, 10vw, 5.5rem);
+  margin: 0;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+header .tagline {
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  color: #ccc;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 0.5rem 0 2rem 0;
+  transition: text-shadow 0.4s ease-in-out, color 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+header .tagline:hover {
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #5ca9e4, 0 0 35px #5ca9e4;
+}
+
+.header-nav {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* --- (El resto de tu CSS para Proyectos, Habilidades, Contacto y Footer puede ir aquí sin cambios) --- */
+/* --- PROYECTOS --- */
+.project-card {
+  position: relative;
+  max-width: 600px;
+  margin: 2rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  color: #eee;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(56, 116, 161, 0.3);
+}
+.project-card a {
+    color: inherit;
+    text-decoration: none;
+}
+.project-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease;
+}
+.project-card:hover img {
+    opacity: 0.9;
+}
+.project-card-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+  padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+  box-sizing: border-box;
+}
+.project-card-text h3 {
+  font-size: 1.75rem;
+  margin: 0 0 0.5rem 0;
+}
+.project-card-text p {
+  margin: 0;
+  color: #ccc;
+  font-family: 'Lato', sans-serif;
+}
+/* --- SECCIÓN DE HABILIDADES --- */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+.skill-item {
+    background-color: #2a2a2a;
+    color: #ddd;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    border: 1px solid #444;
+    transition: all 0.3s ease;
+}
+.skill-item:hover {
+    background-color: #3874a1;
+    color: #fff;
+    border-color: #3874a1;
+    transform: translateY(-3px);
+}
+/* --- SECCIÓN DE CONTACTO --- */
+.contact {
+    text-align: center;
+}
+.contact-links {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.contact-links a {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+.contact-links a:hover {
+    transform: scale(1.1);
+}
+/* --- FOOTER MINIMALISTA --- */
+footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background-color: #0a0a0a;
+  color: #777;
+  font-size: 0.9rem;
+  border-top: 1px solid #222;
+}
+
+
+/* REEMPLAZA TUS ESTILOS DE PROYECTO CON ESTOS */
+
+/* --- SECCIÓN DE PROYECTOS (CON GRID) --- */
+
+/* 1. El nuevo contenedor de la cuadrícula */
+/* REEMPLAZA TU REGLA .projects-grid CON ESTA */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  
+  /* Esta es la línea clave: alinea los items al inicio (arriba) de su celda,
+     evitando que se estiren para igualar la altura del vecino expandido. */
+  align-items: start;
+}
+
+/* 2. La tarjeta ahora es más simple, el grid controla su tamaño y posición */
+.project-card {
+  /* Se eliminan max-width y margin, ahora el grid los controla */
+  border-radius: 12px;
+  background-color: #1a1a1a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+  display: flex; /* Ayuda a que la tarjeta mantenga su estructura interna */
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-5px); /* Un efecto de elevación sutil */
+  box-shadow: 0 8px 25px rgba(56, 116, 161, 0.3);
+}
+
+/* El resto de los estilos de la tarjeta (clickable-area, labels, etc.) se mantienen igual */
+.project-card-clickable-area {
+  cursor: pointer;
+  position: relative;
+}
+
+.project-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10; /* Le da una proporción fija a las imágenes */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image-wrapper img {
+  transform: scale(1.05);
+}
+
+.project-labels {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.label {
+  background-color: rgba(26, 26, 26, 0.8);
+  backdrop-filter: blur(5px);
+  color: #ddd;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.project-card-text {
+  padding: 1rem 1.5rem;
+  background-color: #1a1a1a;
+  flex-grow: 1; /* Asegura que esta área crezca si es necesario */
+}
+
+.project-card-text h3 {
+  font-size: 1.25rem; /* Título un poco más pequeño */
+  margin: 0 0 0.25rem 0;
+  color: #eee;
+}
+
+.project-card-text p {
+  margin: 0;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.expand-icon {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  transition: transform 0.4s ease;
+}
+.expand-icon::before,
+.expand-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 2px;
+  background-color: #888;
+  transition: transform 0.4s ease;
+}
+.expand-icon::before {
+  transform: translate(-50%, -50%);
+}
+.expand-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.project-card.expanded .expand-icon {
+  transform: translateY(-50%) rotate(135deg);
+}
+
+.project-card-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+  padding: 0 1.5rem;
+  background-color: #202020;
+  border-top: 1px solid #333;
+}
+
+.project-card.expanded .project-card-details {
+  max-height: 500px;
+  padding: 1.5rem;
+}
+
+.project-card-details .detail-text {
+  margin: 0 0 1.5rem 0;
+  color: #ccc;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.project-link-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #ddd;
+  background-color: #333;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 0.85rem;
+}
+.project-link-btn:hover {
+  background-color: #444;
+  transform: translateY(-2px);
+}
+.project-link-btn.primary {
+  background-color: #3874a1;
+  color: #fff;
+}
+.project-link-btn.primary:hover {
+  background-color: #4a90c2;
+}
