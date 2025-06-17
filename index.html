@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luis Díaz - Portafolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- 1. Barra de navegación pegajosa (inicialmente oculta) -->
+    <nav id="sticky-nav" class="sticky-nav">
+      <a href="#sobre-mi">Sobre Mí</a>
+      <a href="#proyectos">Proyectos</a>
+        <a href="#enfoque">Enfoque</a>
+        <a href="#vision">Visión</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <main>
+      <!-- 2. Header principal con su propia navegación -->
+      <header id="main-header">
+        <div class="header-content">
+          <h1>Luis D. Díaz</h1>
+          <p class="tagline">Nothing is impossible</p>
+
+          <nav class="header-nav">
+            <a href="#sobre-mi">Sobre Mí</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#enfoque">Enfoque</a>
+            <a href="#vision">Visión</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#contacto">Contacto</a>
+          </nav>
+        </div>
+      </header>
+
+      <div class="main-content">
+        <!-- Secciones (sin cambios) -->
+        <section id="sobre-mi" class="about">
+          <h2>Sobre mí</h2>
+          <p>
+              Soy estudiante de Astronomía con una fuerte afinidad por el desarrollo de soluciones computacionales. Me interesa tanto comprender los fenómenos físicos como diseñar herramientas que los representen de forma clara e interactiva. Encuentro valor en aplicar pensamiento científico al desarrollo, y viceversa, combinando análisis riguroso con creatividad técnica.
+          </p>
+        <p>
+            Me defino por una actitud curiosa, organizada y colaborativa. Disfruto trabajar en equipo, comunicar ideas con claridad y mantener un enfoque constante en aprender y mejorar. Busco proyectos que conecten conocimiento con propósito, integrando tanto lo técnico como lo humano.
+        </p>
+        </section>
+
+        <!-- COPIA Y PEGA ESTE CÓDIGO DENTRO DE TU <section id="proyectos"> --><!-- REEMPLAZA TU SECCIÓN DE PROYECTOS POR ESTA -->
+        <section id="proyectos" class="projects">
+          <h2>Proyectos</h2>
+
+          <!-- NUEVO CONTENEDOR PARA LA CUADRÍCULA (GRID) -->
+          <div class="projects-grid">
+            <!-- Tarjeta de Proyecto 1 -->
+            <div class="project-card">
+              <div class="project-card-clickable-area">
+                <div class="project-image-wrapper">
+                  <img
+                    src="./images/card_relativistic.png"
+                    alt="Visualización de una esfera deformada por efectos relativistas"
+                  />
+                  <div class="project-labels">
+                    <span class="label">C</span>
+                    <span class="label">WebGL</span>
+                    <span class="label">Wasm</span>
+                  </div>
+                </div>
+                <div class="project-card-text">
+                  <h3>Relativistic Viewer</h3>
+                  <p>Simulador web para visualizar efectos relativistas.</p>
+                </div>
+                <span class="expand-icon"></span>
+              </div>
+              <div class="project-card-details">
+                <p class="detail-text">
+                  Aplicación web interactiva que permite visualizar los efectos
+                  predichos por la relatividad especial. El motor de renderizado
+                  3D fue desarrollado desde cero en <strong>C</strong> con
+                  <strong>OpenGL</strong> y compilado a
+                  <strong>WebAssembly (Wasm)</strong> para garantizar un alto
+                  rendimiento directamente en el navegador.
+                </p>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/lldddv2/RelativisticEffectsViewer"
+                    target="_blank"
+                    class="project-link-btn"
+                    >Repositorio</a
+                  >
+                  <a
+                    href="https://relativisticviwer.luisdiaz.space/"
+                    target="_blank"
+                    class="project-link-btn primary"
+                    >Ver Página</a
+                  >
+                </div>
+              </div>
+            </div>
+        </section>
+
+        <!-- PEGA ESTAS DOS NUEVAS SECCIONES ANTES DE LA SECCIÓN DE CONTACTO -->
+
+<!-- 1. Sección: Enfoque Actual -->
+<section id="enfoque" class="focus-section">
+    <h2>Enfoque Actual</h2>
+    <ul class="focus-list">
+      <li>
+        <div class="focus-text">
+            
+          <h3><i class="bi bi-people"></i> Crear Conexiones Significativas</h3>
+          <p>Busco activamente conocer personas de todos los ámbitos. Creo que cada interacción es una oportunidad para aprender, colaborar y crecer. Me entusiasma trabajar con equipos diversos y construir una red de contactos sólida.</p>
+        </div>
+      </li>
+      <li>
+        <div class="focus-text">
+          <h3><i class="fas fa-brain"></i> Aprendizaje Profundo e Investigación</h3>
+          <p>Mi curiosidad no tiene límites. Deseo profundizar mis conocimientos en tecnología, física y matemáticas, participando en proyectos que me desafíen y me permitan investigar nuevas fronteras del conocimiento.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+  
+  <!-- 2. Sección: Mi Visión (Tu sueño) -->
+  <section id="vision" class="vision-section">
+    <h2>Mi Visión</h2>
+    <blockquote>
+      "Mi gran aspiración es contribuir a un mundo donde el acceso al conocimiento y la educación de calidad no esté limitado por el contexto social o económico de una persona. Sueño con usar la tecnología para construir puentes que permitan a todos alcanzar su máximo potencial."
+    </blockquote>
+  </section>
+<section id="habilidades" class="skills">
+    <h2>Habilidades</h2>
+  
+    <div class="skills-layout">
+      <!-- Columna Izquierda: Habilidades Duras -->
+      <div class="hard-skills">
+        <h3>Tecnologías y Herramientas</h3>
+<div class="skills-container">
+  <div class="skill-item">C</div>
+  <div class="skill-item">Python</div>
+  <div class="skill-item">OpenGL</div>
+  <div class="skill-item">WebGL</div>
+  <div class="skill-item">WebAssembly</div>
+  <div class="skill-item">GLSL</div>
+  <div class="skill-item">Docker</div>
+  <div class="skill-item">Linux</div>
+  <div class="skill-item">Git & GitHub</div>
+</div>
+
+<h3 class="skills-subtitle">Conceptos y Matemáticas</h3>
+<div class="skills-container">
+    <div class="skill-item">Física & Astronomía</div> 
+  <div class="skill-item">Física Relativista</div>
+  <div class="skill-item">Simulación Numérica</div>
+  <div class="skill-item">Cálculo Multivariable</div>
+  <div class="skill-item">Geometría Diferencial</div>
+  <div class="skill-item">Álgebra Lineal</div>
+  <div class="skill-item">Ecuaciones Diferenciales</div>
+  <div class="skill-item">Mecánica de Medios Continuos</div>
+</div>
+
+  
+      <!-- Columna Derecha: Habilidades Blandas -->
+      <div class="soft-skills">
+        <h3>Enfoque Profesional</h3>
+        <p>
+          Me considero un profesional proactivo y autodidacta, con una gran capacidad para desglosar problemas complejos en soluciones manejables. Disfruto colaborando en equipo, comunicando ideas técnicas de forma clara y estoy siempre abierto a recibir feedback para crecer y mejorar continuamente.
+        </p>
+      </div>
+    </div>
+  </section>
+
+        <section id="contacto" class="contact">
+          <h2>Contacto</h2>
+          <p>Puedes encontrarme en las siguientes plataformas...</p>
+          <div class="contact-links">
+            <a
+              href="https://github.com/lldddv2"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <img
+                src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"
+                alt="GitHub"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/luis-d%C3%ADaz-60aa3a190/"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <img
+                src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"
+                alt="LinkedIn"
+              />
+            </a>
+            <a href="mailto:tu-correo@ejemplo.com" aria-label="Email">
+              <img
+                src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"
+                alt="Email"
+              />
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2025 Luis D. Díaz. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- 3. El script que controla la magia -->
+    <!-- AÑADE ESTE SCRIPT AL FINAL DE TU HTML, JUSTO ANTES DE </body> -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // --- LÓGICA PARA LA BARRA DE NAVEGACIÓN PEGADIZA ---
+        const stickyNav = document.getElementById("sticky-nav");
+        const header = document.getElementById("main-header");
+
+        // Evita errores si los elementos no existen
+        if (stickyNav && header) {
+          const handleScroll = () => {
+            if (window.scrollY > header.offsetHeight) {
+              stickyNav.classList.add("visible");
+            } else {
+              stickyNav.classList.remove("visible");
+            }
+          };
+          window.addEventListener("scroll", handleScroll);
+        }
+
+        // --- LÓGICA PARA LAS TARJETAS DE PROYECTO EXPANDIBLES ---
+        const projectCards = document.querySelectorAll(".project-card");
+
+        projectCards.forEach((card) => {
+          const clickableArea = card.querySelector(
+            ".project-card-clickable-area"
+          );
+
+          if (clickableArea) {
+            clickableArea.addEventListener("click", () => {
+              // 'toggle' añade la clase si no está, y la quita si ya está
+              card.classList.toggle("expanded");
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
